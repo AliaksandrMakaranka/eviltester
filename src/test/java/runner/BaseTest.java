@@ -12,7 +12,7 @@ import java.time.Duration;
 
 public abstract class BaseTest {
 
-    protected WebDriver driver;
+    private WebDriver driver;
     private static final String URL = "https://testpages.eviltester.com/styled/index.html";
 
     @BeforeAll
@@ -34,5 +34,9 @@ public abstract class BaseTest {
             driver.manage().deleteAllCookies();
 //            driver.quit();
         }
+    }
+
+    protected WebDriver getDriver() {
+        return driver;
     }
 }
